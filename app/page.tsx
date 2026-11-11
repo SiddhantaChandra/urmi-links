@@ -35,6 +35,7 @@ export default function Home() {
             <h1>Urmi</h1>
             <span className="seal" lang="ja" aria-label="Sea">海</span>
           </div>
+          <p className="profile-tagline">Stories, fandoms &amp; everything in between.</p>
           <p className="bio">Anime · Manga · Pop Culture</p>
           <a className="handle" href="https://www.instagram.com/uwummie" target="_blank" rel="noopener noreferrer">@uwummie</a>
         </div>
