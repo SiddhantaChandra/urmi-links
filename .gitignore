@@ -39,3 +39,27 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local documentation and AI tooling
+/docs/
+*.md
+*.mdx
+AGENTS.override.md
+.agents/
+.agent/
+.codex/
+.claude/
+.cursor/
+.cursorrules
+.cursorignore
+.windsurf/
+.windsurfrules
+.clinerules
+.roo/
+.continue/
+.opencode/
+.aider*
+.github/instructions/
+.github/prompts/
+.taste-skill/
+/reports/
