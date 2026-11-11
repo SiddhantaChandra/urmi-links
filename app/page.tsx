@@ -16,9 +16,47 @@ const links = [
   { label: "Get in Touch", href: "mailto:uwummie@gmail.com", icon: Mail },
 ];
 
+const siteUrl = "https://links.urmichakraborty.com/";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": `${siteUrl}#webpage`,
+      url: siteUrl,
+      name: "Urmi Chakraborty (@uwummie) | Official Links & Media Kit",
+      mainEntity: { "@id": `${siteUrl}#person` },
+      hasPart: { "@id": `${siteUrl}#links` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}#person`,
+      name: "Urmi Chakraborty",
+      alternateName: ["Urmi", "uwummie"],
+      url: siteUrl,
+      image: `${siteUrl}images/profile.webp`,
+      jobTitle: "Content Creator & Pop Culture Writer",
+      description: "Anime reviews, manga recommendations, and Japanese pop culture content.",
+      sameAs: links.filter(({ href }) => href.startsWith("https://")).map(({ href }) => href),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${siteUrl}#links`,
+      name: "Urmi’s links",
+      itemListElement: links.map(({ label, href }, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: label,
+        url: href,
+      })),
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <div className="links-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <ShareTools />
       <main className="links-sheet">
         <div className="profile">
