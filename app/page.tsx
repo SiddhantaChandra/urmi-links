@@ -26,7 +26,6 @@ const jsonLd = {
       url: siteUrl,
       name: "Urmi Chakraborty (@uwummie) | Official Links & Media Kit",
       mainEntity: { "@id": `${siteUrl}#person` },
-      hasPart: { "@id": `${siteUrl}#links` },
     },
     {
       "@type": "Person",
