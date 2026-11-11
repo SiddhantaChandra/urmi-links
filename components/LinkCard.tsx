@@ -3,10 +3,10 @@ import Image from "next/image";
 import blossomBranch from "@/public/images/cherry-blossom-small-crop.webp";
 import { ExternalLink } from "pixelarticons/react/ExternalLink.js";
 
-export default function LinkCard({ icon, label, href, featured = false }: { icon: ReactNode; label: string; href: string; featured?: boolean }) {
+export default function LinkCard({ icon, label, href, featured = false, ownedProfile = false }: { icon: ReactNode; label: string; href: string; featured?: boolean; ownedProfile?: boolean }) {
   const external = href.startsWith("https://");
   return (
-    <a className={`link-card${featured ? " link-card-featured" : ""}`} href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined}>
+    <a className={`link-card${featured ? " link-card-featured" : ""}`} href={href} target={external ? "_blank" : undefined} rel={external ? `${ownedProfile ? "me " : ""}noopener noreferrer` : undefined}>
       <span className="link-icon">{icon}</span>
       {featured ? (
         <span className="featured-copy">
@@ -14,6 +14,7 @@ export default function LinkCard({ icon, label, href, featured = false }: { icon
           <span className="featured-description">{label}</span>
         </span>
       ) : <span>{label}</span>}
+      {external && <span className="sr-only"> (opens in a new tab)</span>}
       {featured ? (
         <Image src={blossomBranch} alt="" className="featured-branch" sizes="180px" />
       ) : <ExternalLink className="link-arrow" aria-hidden="true" />}

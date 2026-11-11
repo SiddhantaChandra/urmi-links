@@ -70,16 +70,16 @@ export default function Home() {
             preload
           />
           <div className="name-line">
-            <h1>Urmi</h1>
+            <h1>Urmi<span className="sr-only"> Chakraborty</span></h1>
             <span className="seal" lang="ja" aria-label="Sea">海</span>
           </div>
           <p className="profile-tagline">Stories, fandoms &amp; everything in between.</p>
           <p className="bio">Anime · Manga · Pop Culture</p>
-          <a className="handle" href="https://www.instagram.com/uwummie" target="_blank" rel="noopener noreferrer">@uwummie</a>
+          <a className="handle" href="https://www.instagram.com/uwummie" target="_blank" rel="me noopener noreferrer">@uwummie<span className="sr-only"> (opens in a new tab)</span></a>
         </div>
         <nav className="link-list" aria-label="Urmi’s links">
           {links.map(({ label, href, icon: Icon }) => (
-            <LinkCard key={href} label={label} href={href} featured={label === "Media Kit"} icon={<Icon aria-hidden="true" />} />
+            <LinkCard key={href} label={label} href={href} ownedProfile={href.startsWith("https://")} featured={label === "Media Kit"} icon={<Icon aria-hidden="true" />} />
           ))}
         </nav>
       </main>
