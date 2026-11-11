@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     title: "Urmi Chakraborty (@uwummie) | Official Links & Media Kit",
     description: "Anime reviews, manga recommendations, and Japanese pop culture. Explore my media kit, writing, and social channels.",
     locale: "en_US",
-    images: [{ url: "/images/og-image.png", width: 1200, height: 630, alt: "Urmi Chakraborty — Official links, media kit, writing and social channels" }],
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, type: "image/jpeg", alt: "Urmi Chakraborty — Official links, media kit, writing and social channels" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Urmi Chakraborty (@uwummie) | Official Links & Media Kit",
     description: "Anime reviews, manga recommendations, and Japanese pop culture. My media kit, writing, and social channels.",
-    images: [{ url: "/images/og-image.png", alt: "Urmi Chakraborty — Official links and media kit" }],
+    images: [{ url: "/images/og-image.jpg", alt: "Urmi Chakraborty — Official links and media kit" }],
   },
   robots: {
     index: true,
