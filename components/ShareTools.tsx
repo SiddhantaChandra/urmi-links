@@ -3,7 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { QrCode } from "pixelarticons/react/QrCode.js";
 import { Share } from "pixelarticons/react/Share.js";
-import { QRCodeSVG } from "qrcode.react";
+import dynamic from "next/dynamic";
+
+const QRCodeSVG = dynamic(() => import("qrcode.react").then((module) => module.QRCodeSVG), {
+  ssr: false,
+  loading: () => <div style={{ width: 176, height: 176, display: "grid", placeItems: "center" }} role="status">Loading QR code…</div>,
+});
 
 export default function ShareTools() {
   const [qrUrl, setQrUrl] = useState("");
