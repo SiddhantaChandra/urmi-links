@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -30,8 +30,23 @@ const sans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Urmi’s Links | Anime · Manga · Pop Culture",
-  description: "Official link-in-bio for Urmi — Anime reviews, manga recommendations, and Japanese pop culture content.",
+  metadataBase: new URL("https://links.urmichakraborty.com"),
+  title: "Urmi Chakraborty (@uwummie) | Official Links & Media Kit",
+  description: "Official links, media kit, writing, and social channels for Urmi Chakraborty (@uwummie). Anime reviews, manga recommendations, and Japanese pop culture.",
+  alternates: { canonical: "/" },
+  authors: [{ name: "Urmi Chakraborty", url: "https://www.urmichakraborty.com" }],
+  creator: "Urmi Chakraborty",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -42,6 +57,11 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f8f5ee",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
