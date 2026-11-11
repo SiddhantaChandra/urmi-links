@@ -5,7 +5,6 @@ import "./globals.css";
 const cormorant = localFont({
   src: [
     { path: "./fonts/serif-roman.woff2", weight: "300 700", style: "normal" },
-    { path: "./fonts/serif-italic.woff2", weight: "300 700", style: "italic" },
   ],
   variable: "--font-cormorant",
   display: "swap",
