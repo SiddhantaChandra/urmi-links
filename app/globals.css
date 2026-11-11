@@ -74,8 +74,8 @@ h1 { font-family: var(--font-cormorant), Georgia, serif; font-size: clamp(60px, 
   .link-card:hover, .link-card:focus-visible, .link-card:active { transform: none; }
 }
 
-/* Match the main portfolio’s full-page static overlay exactly. */
-.noise { position: fixed; inset: 0; background-image: url("/images/static.gif"); background-size: 480px; background-repeat: repeat; opacity: 0.03; pointer-events: none; z-index: 2147483647; }
+/* Preserve the subtle grain without continuously animating the viewport. */
+.noise { position: fixed; inset: 0; background-image: url("/images/noise.webp"); background-size: 480px; background-repeat: repeat; opacity: 0.03; pointer-events: none; z-index: 2147483647; }
 
 /* The media kit is the primary invitation to collaborate. */
 .link-card-featured { min-height: 84px; height: auto; padding-block: 16px; }
