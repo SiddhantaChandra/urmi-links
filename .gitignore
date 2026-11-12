@@ -43,6 +43,7 @@ next-env.d.ts
 # Local documentation and AI tooling
 /docs/
 *.md
+!README.md
 *.mdx
 AGENTS.override.md
 .agents/
